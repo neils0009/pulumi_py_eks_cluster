@@ -13,13 +13,17 @@
 
  ## Outputs
 - View Stack Output
-  pulumi stack output
+
+  `pulumi stack output`
 
 - Verify that the EKS cluster exists, by either using the AWS Console or running 
-  aws eks list-clusters
+
+  `aws eks list-clusters`
 
 - Update your KubeConfig, Authenticate to your Kubernetes Cluster and verify you have API access and nodes running.
-  aws eks --region <aws_region> update-kubeconfig --name $(pulumi stack output cluster-name)
+
+  `aws eks --region <aws_region> update-kubeconfig --name $(pulumi stack output cluster-name)`
 
 - check the Kubernetes Nodes
-  kubectl get nodes
+
+  `kubectl get nodes`
