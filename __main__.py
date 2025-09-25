@@ -25,13 +25,14 @@ eks_node_group = eks.NodeGroup(
     node_group_name="pulumi-eks-nodegroup",
     node_role_arn=iam.ec2_role.arn,
     subnet_ids=vpc.subnet_ids,
+    instance_types="t3.micro",
     tags={
         "Name": "pulumi-cluster-nodeGroup",
     },
     scaling_config=eks.NodeGroupScalingConfigArgs(
-        desired_size=2,
-        max_size=2,
-        min_size=1,
+        desired_size=4,
+        max_size=5,
+        min_size=2,
     ),
 )
 
